@@ -1,0 +1,178 @@
+* {
+    width: auto;
+    margin: 0;  
+}
+
+.hero {
+    background-image: url("/assets/images/TheaterStage.jpg");
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+
+h1 {
+    font-size: 30px;
+    color: #e6a152;
+    text-align: center;
+    padding: 15px;
+    font-family: broadway;
+    width: auto;
+    background-color: black;
+} 
+
+hr {
+    border-color: #e6a152;
+    width: 100%;
+}
+
+#quiz-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; 
+    align-items: center;
+    width: 600px;
+    padding: 20px;
+    margin-top: 305px;
+    background-color: black;
+    border-style: double;
+    border-color: #e6a152;
+    border-radius: 4px;
+}
+
+#quiz-box p {
+    font-size: 20px;
+    color: #e6a152;
+}
+
+#opening-display {
+    display: show;
+    color: #e6a152;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+} 
+
+#quiz-display {
+    display: none;
+}
+
+
+#question {
+    background-color: black;
+    text-align: center;
+    line-height: auto;
+    font-size: 20px;
+    color: #e6a152;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;    
+}
+
+.buttons {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+}
+
+.btn {
+    border-radius: 4px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    background-color: #e6a152;
+    border-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    width: 80%
+}
+
+.btn:hover, .btn span:hover{
+    cursor: pointer;
+    background-color: darkgoldenrod;
+}
+
+.btn:active, .btn span:active {
+    background-color:lightskyblue
+}
+
+.btn span {
+    background-color: #e6a152;
+    font-weight: bold;
+}
+
+.quiz-deets {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    padding-top: 20px;
+}
+
+.quiz-deets #progress {
+    color: #e6a152;
+    background-color:black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;  
+}
+
+.quiz-deets #count-down {
+    color: #e6a152;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+.container-two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: auto;
+    text-align: center;
+    gap: 20px;
+ }
+
+#start-button {
+    color:black;
+    font-family: broadway;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #e6a152;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: auto;
+    margin-top: 20px;
+}
+
+#reset-button {
+    color:black;
+    font-family: broadway;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #e6a152;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: auto;
+    margin-top: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: flex;
+}
