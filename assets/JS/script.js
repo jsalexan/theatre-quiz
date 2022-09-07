@@ -3,7 +3,7 @@ var quizScreen = document.querySelector("quiz-display")
 var startButton = document.getElementById("start-button");
 
 
-
+// Attach in a separate doc.
 let questions = [
     new Question(
         "The 80s chart-topper I Know Him So Well was taken from which musical?", ["Evita", "Chess", "Company", "Les Miserables"], "Chess"
@@ -47,7 +47,7 @@ let questions = [
   ];
 
 
-
+// Function to start the quiz and move from the opening display.
   function startQuiz() {
     // hide start screen
     openingMessage.setAttribute("class", "hide");
@@ -61,7 +61,7 @@ let questions = [
    }
 
 
-
+// Function that tracks progress through questions. Will display below answer choice buttons.
 function showProgress() {
     let currentQuestionNumber = quiz.questionIndex + 1;
     let progressElement = document.getElementById("progress");
