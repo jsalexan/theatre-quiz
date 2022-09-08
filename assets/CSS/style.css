@@ -54,7 +54,7 @@ hr {
 }
 
 #opening-display {
-    display: show;
+    display: flex;
     color: #e6a152;
     font-size: 20px;
     text-align: center;
@@ -65,6 +65,9 @@ hr {
     display: none;
 }
 
+#end-display {
+    display: none;
+}
 
 #question {
     background-color: black;
@@ -133,7 +136,7 @@ hr {
 }
 
 
-.container-two {
+.button-display {
     display: flex;
     justify-content: center;
     align-items: center;
