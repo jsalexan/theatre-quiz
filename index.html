@@ -17,11 +17,11 @@
                 <div id="quiz">
                 <h1>Musical Theatre Quiz</h1>
                 <hr>
-                    <div id="opening-display">
+                    <div id="opening-display" class="show">
                     <h1>Welcome to the <br>Musical Theatre Quiz!<br> <br>Test your knowledge <br>and then save your score!<br><br> Break a leg!!</h1>
                     </div>
                 
-                    <div id="quiz-display">
+                    <div id="quiz-display" class="hide">
                         <p id="question"></p>
 
                         <div class="buttons">
@@ -43,7 +43,7 @@
                         </div>
                     </div>
 
-                    <div id="end-display">
+                    <div id="end-display" class="hide">
 
                         <h1>Quiz Completed</h1>
                         <h2 id='score'> You got: ${quiz.score * 10}% correct!</h2>
@@ -62,7 +62,7 @@
                         </div>
                     </div>
 
-                <div class="quiz-deets">
+                <div class="quiz-deets hide">
                 <p id="progress"></p>
                 <p id="countdown"></p>
                 </div>

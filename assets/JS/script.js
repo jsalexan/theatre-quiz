@@ -1,5 +1,6 @@
 var openingMessage = document.querySelector("#opening-display");
 var quizScreen = document.querySelector("quiz-display")
+var endDisplay = document.querySelector("end-display")
 var questionEl = document.querySelector("question");
 var progressEl = document.querySelector("progress");
 var countdownEl = document.querySelector("countdown")
@@ -56,33 +57,30 @@ class Quiz {
 }
 
 function init() {
-  getScores();
-  openingMessage.setAttribute("display:flex");
-  quizScreen.setAttribute("display:none");
+  openingMessage.setAttribute('style', 'display:flex');
+  quizScreen.setAttribute('style', 'display:none');
 }
 
 function startGame() {
   startButton.disabled = true;
-  openingMessage.setAttribute("display:none");
-  quizScreen.setAttribute("display:flex");
+  openingMessage.setAttribute('style', 'display:none');
+  quizScreen.setAttribute('style', 'display:flex');
   countdownEl = 90;
   showQuestion ();
   startCountdown();
 }
 
-
-startButton.addEventListener("click", startGame);
-console.log ("game started")
-
-
-
+function showProgress() {
+  let currentQuestionNumber = quiz.questionList + 1;
+  let progressEl = document.getElementById("progress");
+  progressEl.innerHTML = 
+  `Question ${currentQuestionNumber} of ${quiz.questions.length}`;
+}; 
 
 function showQuestion() {
   if (quiz.isOver()) {
     showScores();
-
   } else {
-    
     questionEl.innerHTML = quiz.getQuestionList().text;
 
     let options = quiz.getQuestionList().options;
@@ -151,7 +149,8 @@ function getScores() {
 }
 
 function showScores() {
-  quizScreen.setAttribute("display:none") 
+  quizScreen.setAttribute('style', 'display:none');
+  endDisplay.setAttribute('style', 'display:flex');
   let quizEl = document.getElementById("quiz");
   quizEl.innerHTML = quizEndHTML;
 };
@@ -201,14 +200,10 @@ let questions = [
 var quiz = new Quiz(questions);
 
 
-function init() {
-  getScores();
-  openingMessage.setAttribute("display:flex");
-  quizScreen.setAttribute("display:none");
-}
+
 
 function startGame() {
-  startButton.disabled = true;
+  // startButton.disabled = true;
   openingMessage.setAttribute("display:none");
   quizScreen.setAttribute("display:flex");
   showQuestion ();
@@ -217,12 +212,10 @@ function startGame() {
 
 
 startButton.addEventListener("click", startGame);
-console.log ("game started")
 
 
 
-
-
+//This should run when the page opens.
 init();
 
 
