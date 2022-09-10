@@ -27,25 +27,22 @@
 
 
                     <div id="quiz-display">
-                        <p class="question"></p>
-
+                        <p class="question-here"></p>
+<!-- TODO: Not sure if I need to change the numbering of these buttons. Will need to figure out once we get the start button working. Check classwork for samples. Also online tutorials, if necessary. -->
                         <div class="buttons">
-                            <button class="btn" id="btn0">
-                            <span id="option0"></span>
-                            </button>
+                            <button class=".btn" id="btn0" value="a">Option1</button>
     
-                            <button class="btn" id="btn1">
-                            <span id="option1"></span>
-                            </button>
+                            <button class=".btn" id="btn1" value="b">Option2</button>
     
-                            <button class="btn" id="btn2">
-                            <span id="option2"></span>
-                            </button>
+                            <button class=".btn" id="btn2" value="c">Option3</button>
     
-                            <button class="btn" id="btn3">
-                            <span id="option3"></span>
-                            </button>
-                        </div>                  
+                            <button class=".btn" id="btn3" value="d">Option4</button>
+                        </div>  
+
+                        <!-- Line for reporting whether answer is right or wrong, right after they guess. -->
+                        <div class="guess-result">
+                            <p></p>
+                        </div>
 
                         <div class="quiz-deets">
                         <p id="progress"></p>
@@ -82,6 +79,7 @@
             </div>
         </header>
         <script src="./assets/JS/script.js"></script>
+        <script src="./assets/JS/trivia.js"></script>
        
   </body>      
 </html>
