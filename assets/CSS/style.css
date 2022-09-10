@@ -89,12 +89,7 @@ hr {
 }
 
 .btn:active, .btn span:active {
-    background-color:lightskyblue
-}
-
-.btn span {
-    background-color: #e6a152;
-    font-weight: bold;
+    background-color:rgb(243, 221, 125)
 }
 
 .quiz-deets {
@@ -112,7 +107,7 @@ hr {
     font-size: 12px;  
 }
 
-.quiz-deets #count-down {
+.quiz-deets #countdown {
     color: #e6a152;
     font-family: 'Courier New', Courier, monospace;
     font-size: 12px;

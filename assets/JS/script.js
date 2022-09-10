@@ -3,7 +3,7 @@ var quizScreen = document.querySelector("quiz-display")
 var endDisplay = document.querySelector("end-display")
 var questionEl = document.querySelector(".question");
 var progressEl = document.querySelector("progress");
-var countdownEl = document.querySelector("countdown")
+var countdownEl = document.querySelector("p #countdown")
 var startButton = document.querySelector("start-button");
 var resetButton = document.querySelector("reset-button");
 
@@ -200,19 +200,19 @@ var quiz = new Quiz(questions);
 var countdownEl = document.querySelector("countdown");
 var secondsLeft = 90;
 
-function setTimer() {
-    var timerInterval = setInterval(function() {
-    secondsLeft--;
-    countdownEl.textContent = "You have " + secondsLeft + " seconds left!";
-
-    if(secondsLeft === 0) {
-    clearInterval(timerInterval);
-    showScores();
-    }
+function setTimer() { 
+  var countdownInterval = setInterval(function () {
+      secondsLeft--;
+      countdownEl.textContent = "Time left: " + secondsLeft + " seconds!";
+  if (secondsLeft <= 0){
+  clearInterval(countdownInterval);
+  gameOver();
+  } else  if(questionList === questions.length +1) {
+      clearInterval(countdownInterval);
+      showScores();
+      } 
   }, 1000);
 }
-
-
 
 // startButton.addEventListener("click", startGame);
 
