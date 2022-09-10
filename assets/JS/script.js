@@ -48,14 +48,14 @@ class Quiz {
   }
 }
 
-function startGame() {
-  startButton.disabled = true;
-  openingMessage.setAttribute('style', 'display:none');
-  quizScreen.setAttribute('style', 'display:flex');
-  countdownEl = 90;
-  showQuestion ();
-  startCountdown();
-}
+// function startGame() {
+//   startButton.disabled = true;
+//   openingMessage.setAttribute('style', 'display:none');
+//   quizScreen.setAttribute('style', 'display:flex');
+//   countdownEl = 90;
+//   showQuestion ();
+//   startCountdown();
+// }
 
 function showProgress() {
   let currentQuestionNumber = quiz.questionList + 1;
@@ -77,6 +77,7 @@ function showQuestion() {
       guess("btn" + i, options[i]);
     }
         showProgress();
+        setTimer()
   }
 };
 
@@ -88,28 +89,15 @@ function showQuestion() {
     }
   };
 
-// The gameOver function is called when timer reaches 0
-function gameOver() {
-  // wordBlank.textContent = "GAME OVER";
-  startButton.disabled = false;
-  setScores()
-}
+// // The gameOver function is called when timer reaches 0
+// function gameOver() {
+//   // wordBlank.textContent = "GAME OVER";
+//   startButton.disabled = false;
+//   setScores()
+// }
 
 
-function startCountdown() {
-  timer = setInterval(function() {
-    timerCount--;
-    countdownEl.textContent = timerCount;
-       if (isOver && timerCount > 0) {
-          clearInterval(timer);
-        showScores();
-      }
-       if (timerCount === 0) {
-      clearInterval(timer);
-      gameOver();
-      }
-     }, 1000);
-}
+
 
 
 
@@ -166,7 +154,7 @@ function showScores() {
 
 let questions = [
   new Trivia(
-      "The 80s chart-topper I Know Him So Well was taken from which musical?", ["Evita", "Chess", "Company", "Les Miserables"], "Chess"
+      "The 80s chart-topper One Night in Bangkok was taken from which musical?", ["Evita", "Chess", "Company", "Les Miserables"], "Chess"
   ),
 
   new Trivia(
@@ -209,7 +197,20 @@ let questions = [
 var quiz = new Quiz(questions);
 
 
+var countdownEl = document.querySelector("countdown");
+var secondsLeft = 90;
 
+function setTimer() {
+    var timerInterval = setInterval(function() {
+    secondsLeft--;
+    countdownEl.textContent = "You have " + secondsLeft + " seconds left!";
+
+    if(secondsLeft === 0) {
+    clearInterval(timerInterval);
+    showScores();
+    }
+  }, 1000);
+}
 
 
 
