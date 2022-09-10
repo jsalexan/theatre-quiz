@@ -70,6 +70,7 @@ let questionsList = [
       answer: "Rent"
   },
 ];
+
 function startGame () {
   openingMessage.style.display = "none";
   quizScreen.style.display = "flex";

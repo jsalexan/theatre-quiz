@@ -64,7 +64,7 @@ hr {
 }
 
 .buttons {
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
@@ -93,7 +93,7 @@ hr {
 }
 
 .quiz-deets {
-    display: flex;
+    display: none;
     justify-content: space-around;
     align-items: center;
     background-color: black;
@@ -150,13 +150,19 @@ hr {
     margin-top: 20px;
 }
 
+
+
+#final-display {
+    display: none;
+}
+
 form {
     display: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     background-color: black;
-}
+} 
 
 #initials placeholder{
     display: flex;
@@ -166,6 +172,7 @@ form {
     background-color: #e6a152;
     color:black;
 }
+
 button #enter-initials {
     display: flex;
     justify-content: center;
@@ -183,7 +190,7 @@ button #enter-initials {
 }
 
 #opening-display {
-    margin-top: 30px;
+    margin-top: 40px;
  }
 
 #opening-display p{
