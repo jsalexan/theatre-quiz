@@ -17,52 +17,29 @@
                 <div id="quiz">
                 <h1>Musical Theatre Quiz</h1>
                 <hr>
-                    <div id="opening-display" class="show">
-                    <h1>Welcome to the <br>Musical Theatre Quiz!<br> <br>Test your knowledge <br>and then save your score!<br><br> Break a leg!!</h1>
-                    </div>
-                
-                    <div id="quiz-display" class="hide">
-                        <p id="question"></p>
+                  
+                    
+                    <p class="question"></p>
 
-                        <div class="buttons">
-                            <button class="btn" id="btn0">
-                            <span id="option0"></span>
-                            </button>
-        
-                            <button class="btn" id="btn1">
-                            <span id="option1"></span>
-                            </button>
-        
-                            <button class="btn" id="btn2">
-                             <span id="option2"></span>
-                            </button>
-        
-                            <button class="btn" id="btn3">
-                             <span id="option3"></span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div id="end-display" class="hide">
-
-                        <h1>Quiz Completed</h1>
-                        <h2 id='score'> You got: ${quiz.score * 10}% correct!</h2>
-                        <form method="post">
-                            <div class="input-group">
-                            <input type="text" name="initials" id="initials" placeholder="Type Initials Here" />
-                            </div>
-                            <p>Enter your initials to save your score.</p>
-                            <button id="enter-initials">ENTER</button>
-                        </form>
+                    <div class="buttons">
+                        <button class="btn" id="btn0">
+                        <span id="option0"></span>
+                        </button>
     
-                        <div class="quiz-repeat">
-                        <p>To take quiz again, click START.  
-                        <br><br>
-                         To clear all scores, click RESET.
-                        </div>
-                    </div>
+                        <button class="btn" id="btn1">
+                        <span id="option1"></span>
+                        </button>
+    
+                        <button class="btn" id="btn2">
+                         <span id="option2"></span>
+                        </button>
+    
+                        <button class="btn" id="btn3">
+                         <span id="option3"></span>
+                        </button>
+                    </div>                  
 
-                <div class="quiz-deets hide">
+                <div class="quiz-deets">
                 <p id="progress"></p>
                 <p id="countdown"></p>
                 </div>

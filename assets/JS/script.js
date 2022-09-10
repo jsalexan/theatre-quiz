@@ -1,17 +1,11 @@
 var openingMessage = document.querySelector("#opening-display");
 var quizScreen = document.querySelector("quiz-display")
 var endDisplay = document.querySelector("end-display")
-var questionEl = document.querySelector("question");
+var questionEl = document.querySelector(".question");
 var progressEl = document.querySelector("progress");
 var countdownEl = document.querySelector("countdown")
 var startButton = document.querySelector("start-button");
 var resetButton = document.querySelector("reset-button");
-
-var timer;
-var timerCount;
-
-score = 0;
-questionEl = 0;
 
 // Sets score to 0, prepares questions, and question list to first one.
 class Quiz {
@@ -29,8 +23,6 @@ class Quiz {
   guess(answer) {
     if (this.getQuestionList().isCorrectAnswer(answer)) {
     this.score++;
-    } else {
-    timerCount - 10;
     } 
     this.questionList++; 
     }
@@ -54,11 +46,6 @@ class Quiz {
   isWrongAnswer(choice) {
     return this.answer != choice;
   }
-}
-
-function init() {
-  openingMessage.setAttribute('style', 'display:flex');
-  quizScreen.setAttribute('style', 'display:none');
 }
 
 function startGame() {
@@ -126,33 +113,55 @@ function startCountdown() {
 
 
 
-// Updates win count on screen and sets win count to client storage
-function setScores() {
-  win.textContent = scoreTracker;
-  localStorage.setItem("storedWins", scoreTracker);
-}
+// // Updates win count on screen and sets win count to client storage
+// function setScores() {
+//   win.textContent = scoreTracker;
+//   localStorage.setItem("storedWins", scoreTracker);
+// }
 
+// function startGame() {
+//   // startButton.disabled = true;
+//   showQuestion ();
+//   startCountdown();
+// }
 
-
-function getScores() {
-  // Get stored value from client storage, if it exists
-  var storedWins = localStorage.getItem("highScores");
-  // If stored value doesn't exist, set counter to 0
-  if (storedWins === null) {
-    scoreTracker = 0;
-  } else {
-    // If a value is retrieved from client storage set the winCounter to that value
-    scoreTracker = storedWins;
-  }
-  //Render win count to page
-  win.textContent = scoreTracker;
-}
+// function getScores() {
+//   // Get stored value from client storage, if it exists
+//   var storedWins = localStorage.getItem("highScores");
+//   // If stored value doesn't exist, set counter to 0
+//   if (storedWins === null) {
+//     scoreTracker = 0;
+//   } else {
+//     // If a value is retrieved from client storage set the winCounter to that value
+//     scoreTracker = storedWins;
+//   }
+//   //Render win count to page
+//   win.textContent = scoreTracker;
+// }
 
 function showScores() {
-  quizScreen.setAttribute('style', 'display:none');
-  endDisplay.setAttribute('style', 'display:flex');
-  let quizEl = document.getElementById("quiz");
-  quizEl.innerHTML = quizEndHTML;
+  let quizEndHTML =
+      `
+  <h1>Quiz Completed</h1>
+  <h2 id='score'> You got: ${quiz.score * 10}% correct!</h2>
+  <form method="post">
+     <div class="input-group">
+           <input type="text" name="initials" id="initials" placeholder="Type Initials Here" />
+          </div>
+          <br>
+  <p>Enter your initials to save your score.</p>
+  <br>
+  <button id="enter-initials">ENTER</button>
+  </form>
+  <div class="quiz-repeat">
+  <br><br>
+      <p>To take quiz again, click START.  
+      <br><br>
+      To clear all scores, click RESET.
+  </div>
+  `;
+  let quizElement = document.getElementById("quiz");
+  quizElement.innerHTML = quizEndHTML;
 };
 
 let questions = [
@@ -202,21 +211,14 @@ var quiz = new Quiz(questions);
 
 
 
-function startGame() {
-  // startButton.disabled = true;
-  openingMessage.setAttribute("display:none");
-  quizScreen.setAttribute("display:flex");
-  showQuestion ();
-  startCountdown();
-}
 
 
-startButton.addEventListener("click", startGame);
+// startButton.addEventListener("click", startGame);
 
 
 
 //This should run when the page opens.
-init();
+showQuestion();
 
 
 

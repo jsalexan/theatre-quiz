@@ -53,23 +53,7 @@ hr {
     color: #e6a152;
 }
 
-#opening-display {
-    display: flex;
-    color: #e6a152;
-    font-size: 20px;
-    text-align: center;
-    margin-top: 10px;
-} 
-
-#quiz-display {
-    display: none;
-}
-
-#end-display {
-    display: none;
-}
-
-#question {
+.question {
     background-color: black;
     text-align: center;
     line-height: auto;
@@ -80,7 +64,7 @@ hr {
 }
 
 .buttons {
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
@@ -115,7 +99,7 @@ hr {
 
 .quiz-deets {
     display: flex;
-    justify-content: space-around;
+    justify-content: left;
     align-items: center;
     background-color: black;
     padding-top: 20px;
@@ -172,10 +156,28 @@ hr {
     margin-top: 20px;
 }
 
-.hide {
-    display: none;
+form {
+    display: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: black;
 }
 
-.show {
+#initials placeholder{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #e6a152;
+    color:black;
+}
+button #enter-initials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #e6a152;
+    color:black;
+    border-radius: 5px;
 }
