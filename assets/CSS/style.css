@@ -94,7 +94,7 @@ hr {
 
 .quiz-deets {
     display: flex;
-    justify-content: left;
+    justify-content: space-around;
     align-items: center;
     background-color: black;
     padding-top: 20px;
@@ -102,7 +102,6 @@ hr {
 
 .quiz-deets #progress {
     color: #e6a152;
-    background-color:black;
     font-family: 'Courier New', Courier, monospace;
     font-size: 12px;  
 }
@@ -175,4 +174,10 @@ button #enter-initials {
     background-color: #e6a152;
     color:black;
     border-radius: 5px;
+}
+
+#score {
+    color:#e6a152;
+    text-align: center;
+    margin-bottom: 10px;
 }

@@ -3,7 +3,7 @@ var quizScreen = document.querySelector("quiz-display")
 var endDisplay = document.querySelector("end-display")
 var questionEl = document.querySelector(".question");
 var progressEl = document.querySelector("progress");
-var countdownEl = document.querySelector("p #countdown")
+var countdownEl = document.getElementById("#countdown")
 var startButton = document.querySelector("start-button");
 var resetButton = document.querySelector("reset-button");
 
@@ -77,7 +77,7 @@ function showQuestion() {
       guess("btn" + i, options[i]);
     }
         showProgress();
-        setTimer()
+        startTimer()
   }
 };
 
@@ -89,12 +89,7 @@ function showQuestion() {
     }
   };
 
-// // The gameOver function is called when timer reaches 0
-// function gameOver() {
-//   // wordBlank.textContent = "GAME OVER";
-//   startButton.disabled = false;
-//   setScores()
-// }
+
 
 
 
@@ -136,13 +131,10 @@ function showScores() {
      <div class="input-group">
            <input type="text" name="initials" id="initials" placeholder="Type Initials Here" />
           </div>
-          <br>
   <p>Enter your initials to save your score.</p>
-  <br>
   <button id="enter-initials">ENTER</button>
   </form>
   <div class="quiz-repeat">
-  <br><br>
       <p>To take quiz again, click START.  
       <br><br>
       To clear all scores, click RESET.
@@ -198,20 +190,18 @@ var quiz = new Quiz(questions);
 
 
 var countdownEl = document.querySelector("countdown");
-var secondsLeft = 90;
+let time = 90;
 
-function setTimer() { 
-  var countdownInterval = setInterval(function () {
-      secondsLeft--;
-      countdownEl.textContent = "Time left: " + secondsLeft + " seconds!";
-  if (secondsLeft <= 0){
-  clearInterval(countdownInterval);
-  gameOver();
-  } else  if(questionList === questions.length +1) {
-      clearInterval(countdownInterval);
-      showScores();
-      } 
-  }, 1000);
+function startCountdown() {
+    let countdownInterval = setInterval(function() {
+        if (time <= 0) {
+            clearInterval(countdownInterval);
+            showScores();
+        } else {
+            time--;
+            countdownEl.innerHTML = `Time left: ${time}`;
+        }
+    }, 1000);
 }
 
 // startButton.addEventListener("click", startGame);
