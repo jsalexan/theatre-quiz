@@ -21,6 +21,11 @@ var options = document.querySelectorAll(".options");
 var questionNumber = 0; 
 var finalScore = 0;
 
+function showProgress() {
+    let currentQuestionsNumber = questionNumber + 1;
+    let progressEl = document.getElementById("progress");
+    progressEl.textContent = "Question " + currentQuestionsNumber + " of "+ (questionsList.length);
+  }; 
 
 function startGame () {
   openingMessage.style.display = "none";
@@ -31,14 +36,11 @@ function startGame () {
   progressEl.style.display = "flex";
   startCountdown();
   showQuestion(questionNumber);
+  showProgress();
   console.log("Start game launched");
 }
 
-function showProgress() {
-  let currentQuestionsNumber = questionsList + 1;
-  let progressEl = document.getElementById("progress");
-  progressEl.textContent = `Question ${currentQuestionsNumber}${"of "(questionsList.length)}`;
-}; 
+
 
 var x = questionNumber
 function showQuestion(x) {
