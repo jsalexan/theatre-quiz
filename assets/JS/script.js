@@ -8,7 +8,8 @@ var questionHere = document.querySelector(".question-here");
 var buttons = document.querySelector(".buttons");
 var guessResult = document.querySelector(".guess-result");
 var quizDeets = document.querySelector(".quiz-deets");
-
+var progressEl = document.querySelector(".quiz-deets #progress");
+var countdownEl = document.querySelector(".quiz-deets #countdown");
 
 var btn = document.querySelector(".btn");
 var btn0 = document.querySelector("#Btn0")
@@ -24,14 +25,13 @@ function startGame () {
   openingMessage.style.display = "none";
   questionHere.style.display = "flex";
   buttons.style.display = "flex";
-  guessResult.style.display = "flex";
   quizDeets.style.display = "flex";
-
-
+  countdownEl.style.display = "flex";
+  progressEl.style.display = "flex";
   questionNumber = 0
-//   startCountdown();
+  startCountdown();
 //   askQuestion(questionNumber)
-  console.log("Start game button clicked!");
+  console.log("Start game launched");
 }
 
 function showProgress() {
@@ -43,7 +43,7 @@ function showProgress() {
 
 
 let time = 90;
-var countdownEl = document.querySelector("countdown")
+var countdownEl = document.querySelector("#countdown")
 function startCountdown() {
     let countdownInterval = setInterval(function() {
         if (time <= 0) {
