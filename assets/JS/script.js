@@ -1,11 +1,14 @@
 var openingMessage = document.querySelector("#opening-display");
-var quizScreen = document.querySelector("quiz-display")
-var endDisplay = document.querySelector("end-display")
+var quizScreen = document.querySelector("#quiz-display")
+var endDisplay = document.querySelector("#end-display")
 
-var startButton = document.querySelector("start-button");
+
 var resetButton = document.querySelector("reset-button");
 var questionHere = document.querySelector(".question-here");
+var buttons = document.querySelector(".buttons");
 var guessResult = document.querySelector(".guess-result");
+var quizDeets = document.querySelector(".quiz-deets");
+
 
 var btn = document.querySelector(".btn");
 var btn0 = document.querySelector("#Btn0")
@@ -19,10 +22,15 @@ questionsList = 0;
 
 function startGame () {
   openingMessage.style.display = "none";
-  quizScreen.style.display = "flex";
+  questionHere.style.display = "flex";
+  buttons.style.display = "flex";
+  guessResult.style.display = "flex";
+  quizDeets.style.display = "flex";
+
+
   questionNumber = 0
-  startCountdown();
-  askQuestion(questionNumber)
+//   startCountdown();
+//   askQuestion(questionNumber)
   console.log("Start game button clicked!");
 }
 
@@ -32,56 +40,6 @@ function showProgress() {
   progressEl.innerHTML = 
   `Question ${currentQuestionNumber} of ${quiz.questions.length}`;
 }; 
-
-var questionNumber = x;
-function showQuestion(x) {
-        questionHere.textContent = questionsList[x].question;
-        btn0.textContent = questionsList[x].option[0];
-        btn1.textContent = questionsList[x].option[1];
-        btn2.textContent = questionsList[x].option[2];
-        btn3.textContent = questionsList[x].option[3];       
-    }
-
-
-
-
-
-
-
-
-
-
-// // Updates win count on screen and sets win count to client storage
-// function setScores() {
-//   win.textContent = scoreTracker;
-//   localStorage.setItem("storedWins", scoreTracker);
-// }
-
-// function startGame() {
-//   // startButton.disabled = true;
-//   showQuestion ();
-//   startCountdown();
-// }
-
-// function getScores() {
-//   // Get stored value from client storage, if it exists
-//   var storedWins = localStorage.getItem("highScores");
-//   // If stored value doesn't exist, set counter to 0
-//   if (storedWins === null) {
-//     scoreTracker = 0;
-//   } else {
-//     // If a value is retrieved from client storage set the winCounter to that value
-//     scoreTracker = storedWins;
-//   }
-//   //Render win count to page
-//   win.textContent = scoreTracker;
-// }
-
-
-
-
-
-
 
 
 let time = 90;
@@ -96,14 +54,18 @@ function startCountdown() {
             countdownEl.textContent = "Time left: " + time;
         }
     }, 1000);
-}
+};
 
-startButton.addEventListener ("click", startGame());
+let startButton = document.querySelector("#start-button");
+startButton.addEventListener("click", () => {
+    startGame();
+    console.log("Button clicked.");
+});
 
 
 
-//This should run when the page opens.
-showQuestion();
+
+
 
 
 
