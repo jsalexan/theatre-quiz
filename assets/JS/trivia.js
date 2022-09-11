@@ -1,6 +1,6 @@
 let questionsList = [
     {
-        text: "The 80s chart-topper One Night in Bangkok was taken from which musical?", options: ["Evita", "Chess", "Company", "Les Miserables"], answer: "Chess"
+        text: "The 80s chart-topper One Night in Bangkok was taken from which musical?", options: ["Evita", "Chess", "Company", "Les Miserables"], answer: "b"
     },
   
   {

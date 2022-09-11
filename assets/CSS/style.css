@@ -201,3 +201,13 @@ button #enter-initials {
     font-size: 30px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+.guess-result {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color:#e6a152;
+    width: auto;
+    text-align: center;
+    margin-top: 20px;
+}

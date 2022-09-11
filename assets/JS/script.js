@@ -15,7 +15,7 @@ var btn0 = document.querySelector("#btn0");
 var btn1 = document.querySelector("#btn1");
 var btn2 = document.querySelector("#btn2");
 var btn3 = document.querySelector("#btn3");
-var options = document.querySelectorAll(".options");
+var optionsBtns = document.querySelectorAll(".options");
 
 
 var questionNumber = 0; 
@@ -40,8 +40,6 @@ function startGame () {
   console.log("Start game launched");
 }
 
-
-
 var x = questionNumber
 function showQuestion(x) {
         questionHere.textContent = questionsList[x].text;
@@ -51,14 +49,43 @@ function showQuestion(x) {
         btn3.textContent = questionsList[x].options[3];       
     }
 
+    function guessAnswer(event) {
+        event.preventDefault();
+        guessResult.style.display = "flex";
+    
+        setTimeout(function () {
+            guessResult.style.display = "none";
+        }, 1000);
+    
+           if (questionsList[questionNumber].answer == event.target.value) {
+            guessResult.textContent = "Correct! You're a star!"; 
+            finalScore = finalScore + 1;
+    
+        } else {
+            time = time - 10;
+            guessResult.textContent = "Wrong! Back to rehearsal!";
+        }
+         
+        if (questionNumber < questionsList.length -1 ) {
+            showQuestion(questionNumber +1);
+        } else {
+        gameOver();
+    }
+    questionCount++;
+    }
+    
+   
 
-let time = 90;
+
+
+
+var time = 90;
 var countdownEl = document.querySelector("#countdown")
 function startCountdown() {
     let countdownInterval = setInterval(function() {
         if (time <= 0) {
             clearInterval(countdownInterval);
-            showScores();
+            gameOver();
         } else {
             time--;
             countdownEl.textContent = "Time left: " + time + " seconds!";
@@ -66,12 +93,16 @@ function startCountdown() {
     }, 1000);
 };
 
-let startButton = document.querySelector("#start-button");
+var startButton = document.querySelector("#start-button");
 startButton.addEventListener("click", () => {
     startGame();
     console.log("Button clicked.");
 });
 
+
+optionsBtns.forEach(function(click){
+    click.addEventListener("click", guessAnswer);
+});
 
 
 
