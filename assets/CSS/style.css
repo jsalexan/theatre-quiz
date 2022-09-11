@@ -72,7 +72,7 @@ hr {
     background-color: black;
 }
 
-.btn {
+.options {
     border-radius: 4px;
     text-align: center;
     color: black;
@@ -84,12 +84,12 @@ hr {
     width: 80%
 }
 
-.btn:hover, .btn span:hover{
+.options:hover, .options text:hover{
     cursor: pointer;
     background-color: darkgoldenrod;
 }
 
-.btn:active, .btn span:active {
+.options:active, .options text:active {
     background-color:rgb(243, 221, 125)
 }
 
@@ -191,7 +191,9 @@ button #enter-initials {
 }
 
 #opening-display {
+    display: flex;
     margin-top: 40px;
+    margin-bottom: 20px;
  }
 
 #opening-display p{
