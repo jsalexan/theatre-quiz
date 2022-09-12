@@ -71,7 +71,7 @@ function guessAnswer(event) {
            if (questionsList[questionNumber].answer == event.target.value) {
             guessResult.textContent = "Correct! You're a star!"; 
             finalScore = finalScore+ 1;
-            localStorage.setItem("finalScore", score);
+            localStorage.setItem("finalScore", (finalScore*10));
             console.log(finalScore);
     
         } else {

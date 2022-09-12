@@ -23,7 +23,7 @@ h1 {
     font-size: 40px;
     color: #e6a152;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     font-family: broadway;
     width: auto;
     background-color: black;
@@ -43,6 +43,12 @@ hr {
     border-color: #e6a152;
     width: 100%;
 }
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+}
 
 #quiz-box {
     display: flex;
@@ -50,9 +56,8 @@ hr {
     justify-content: space-around; 
     align-items: center;
     width: 600px;
-    height: 400px;
-    padding: 20px;
-    margin-top: 250px;
+    height: 440px;
+    margin-top: 200px;
     background-color: black;
     border-style: double;
     border-color: #e6a152;
@@ -112,11 +117,6 @@ hr {
     padding-top: 20px;
 }
 
-.quiz-deets #progress {
-    color: #e6a152;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 12px;  
-}
 
 .quiz-deets #countdown {
     color: #e6a152;
@@ -128,12 +128,12 @@ hr {
 
 .button-display {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
     width: auto;
     text-align: center;
-    gap: 20px;
+   
  }
 
 #start-button {
@@ -225,7 +225,7 @@ button#saveScoreBtn {
     text-align: center;
     font-size: 20px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    
+
 }
 
 .guess-result {
