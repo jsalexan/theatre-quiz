@@ -155,6 +155,9 @@ hr {
 
 #final-display {
     display: none;
+    justify-content: center;
+    align-items: center;
+
 }
 
 form {
@@ -210,4 +213,8 @@ button #enter-initials {
     width: auto;
     text-align: center;
     margin-top: 20px;
+}
+
+.quiz-repeat {
+    text-align: center;
 }

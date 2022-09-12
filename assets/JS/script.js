@@ -1,6 +1,6 @@
 var openingMessage = document.querySelector("#opening-display");
 var quizScreen = document.querySelector("#quiz-display")
-var endDisplay = document.querySelector("#end-display")
+var endDisplay = document.querySelector("#final-display")
 
 
 var resetButton = document.querySelector("reset-button");
@@ -21,11 +21,7 @@ var optionsBtns = document.querySelectorAll(".options");
 var questionNumber = 0; 
 var finalScore = 0;
 
-function showProgress() {
-    let currentQuestionsNumber = questionNumber + 1;
-    let progressEl = document.getElementById("progress");
-    progressEl.textContent = "Question " + currentQuestionsNumber + " of "+ (questionsList.length);
-  }; 
+
 
 function startGame () {
   openingMessage.style.display = "none";
@@ -71,13 +67,24 @@ function showQuestion(x) {
         } else {
         gameOver();
     }
-    questionCount++;
+    questionNumber++;
     }
     
    
+    function showProgress() {
+        let currentQuestionsNumber = questionNumber + 1;
+        let progressEl = document.getElementById("progress");
+        progressEl.textContent = "Question " + currentQuestionsNumber + " of "+ (questionsList.length);
+      }; 
 
-
-
+    function gameOver() {
+    questionHere.style.display = "none";
+    buttons.style.display = "none";
+    quizDeets.style.display = "none";
+    countdownEl.style.display = "none";
+    progressEl.style.display = "none";
+    endDisplay.style.display = "block";
+    }
 
 var time = 90;
 var countdownEl = document.querySelector("#countdown")
