@@ -11,7 +11,7 @@ var questionHere = document.querySelector(".question-here");
 var buttons = document.querySelector(".buttons");
 var guessResult = document.querySelector(".guess-result");
 var quizDeets = document.querySelector(".quiz-deets");
-var progressEl = document.querySelector("#progress");
+
 var countdownEl = document.querySelector("#countdown");
 var highScores = document.querySelector(".high-scores");
 
@@ -27,35 +27,25 @@ var questionNumber;
 
 
 
-
-
-
-
-
-
 function startGame () {
   questionNumber = 0;
+  questionProgress = 1;
   finalScore = 0;
   openingMessage.style.display = "none";
   questionHere.style.display = "flex";
   buttons.style.display = "flex";
   quizDeets.style.display = "flex";
   countdownEl.style.display = "flex";
-  progressEl.style.display = "flex";
+  
   endDisplay.style.display= "none";
   buttonDisplay.style.display =  "none";
   
 
   startCountdown();
   showQuestion(questionNumber);
-  showProgress();
+  
   console.log("Start game launched");
 }
-
-
-
-
-
 
 function showQuestion(x) {
         questionHere.textContent = questionsList[x].text;
@@ -68,7 +58,7 @@ function showQuestion(x) {
 
 function guessAnswer(event) {
         event.preventDefault();
-        guessResult.style.display = "flex";
+        guessResult.style.display = "block";
     
         setTimeout(function () {
             guessResult.style.display = "none";
@@ -92,18 +82,12 @@ function guessAnswer(event) {
     questionNumber++;
     };
     
-    function showProgress() {
-        let currentQuestionsNumber = (questionNumber + 1);
-        progressEl.textContent = "Question " + currentQuestionsNumber + " of " + questionsList.length;
-        }; 
-  
 
 function gameOver() {
     questionHere.style.display = "none";
     buttons.style.display = "none";
     quizDeets.style.display = "none";
     countdownEl.style.display = "none";
-    progressEl.style.display = "none";
     guessResult.style.display = "none";
     endDisplay.style.display = "block";
     scoreText.textContent = "You got: " + (finalScore * 10) + "% correct!";
@@ -115,7 +99,7 @@ function gameOver() {
 function startCountdown() {
     time = 90;
     let countdownInterval = setInterval(function() {
-        if (time <= 0) {
+        if (time <= 0 || questionProgress >= questionsList.length +1) {
             clearInterval(countdownInterval);
             gameOver();
         } else {
