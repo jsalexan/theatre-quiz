@@ -1,7 +1,8 @@
 var openingMessage = document.querySelector("#opening-display");
-var quizScreen = document.querySelector("#quiz-display")
-var endDisplay = document.querySelector("#final-display")
-var buttonDisplay = document.querySelector(".button-display")
+var quizScreen = document.querySelector("#quiz-display");
+var endDisplay = document.querySelector("#final-display");
+var buttonDisplay = document.querySelector(".button-display");
+var enterInitials = document.querySelector("#enter-initials");
 var time;
 
 
@@ -12,6 +13,7 @@ var guessResult = document.querySelector(".guess-result");
 var quizDeets = document.querySelector(".quiz-deets");
 var progressEl = document.querySelector("#progress");
 var countdownEl = document.querySelector("#countdown");
+var highScores = document.querySelector(".high-scores");
 
 var btn0 = document.querySelector("#btn0");
 var btn1 = document.querySelector("#btn1");
@@ -22,6 +24,14 @@ var optionsBtns = document.querySelectorAll(".options");
 var scoreText = document.querySelector("#score");
 var finalScore;
 var questionNumber;
+
+
+
+
+
+
+
+
 
 function startGame () {
   questionNumber = 0;
@@ -41,6 +51,8 @@ function startGame () {
   showProgress();
   console.log("Start game launched");
 }
+
+
 
 
 
@@ -76,15 +88,14 @@ function guessAnswer(event) {
             showQuestion(questionNumber +1);
         } else {
         gameOver();
-    }
+        }
     questionNumber++;
     };
     
-function showProgress() {
-        let currentQuestionsNumber = questionNumber + 1;
-        let progressEl = document.getElementById("#progress");
-        progressEl.textContent = "Question " + currentQuestionsNumber + " of "+ (questionsList.length);
-      }; 
+    function showProgress() {
+        let currentQuestionsNumber = (questionNumber + 1);
+        progressEl.textContent = "Question " + currentQuestionsNumber + " of " + questionsList.length;
+        }; 
   
 
 function gameOver() {
