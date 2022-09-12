@@ -117,7 +117,7 @@ hr {
 
 .button-display {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
     width: auto;
@@ -175,6 +175,7 @@ form {
     text-align: center;
     background-color: #e6a152;
     color:black;
+    width: 20px;
 }
 
 button #enter-initials {
@@ -185,6 +186,7 @@ button #enter-initials {
     background-color: #e6a152;
     color:black;
     border-radius: 5px;
+  
 }
 
 #score {

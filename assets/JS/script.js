@@ -1,6 +1,8 @@
 var openingMessage = document.querySelector("#opening-display");
 var quizScreen = document.querySelector("#quiz-display")
 var endDisplay = document.querySelector("#final-display")
+var buttonDisplay = document.querySelector(".button-display")
+var time;
 
 
 var resetButton = document.querySelector("reset-button");
@@ -9,7 +11,7 @@ var buttons = document.querySelector(".buttons");
 var guessResult = document.querySelector(".guess-result");
 var quizDeets = document.querySelector(".quiz-deets");
 var progressEl = document.querySelector("#progress");
-var countdownEl = document.querySelector(".quiz-deets #countdown");
+var countdownEl = document.querySelector("#countdown");
 
 var btn0 = document.querySelector("#btn0");
 var btn1 = document.querySelector("#btn1");
@@ -17,35 +19,42 @@ var btn2 = document.querySelector("#btn2");
 var btn3 = document.querySelector("#btn3");
 var optionsBtns = document.querySelectorAll(".options");
 
-
-var questionNumber = 0; 
-var finalScore = 0;
-
-
+var scoreText = document.querySelector("#score");
+var finalScore;
+var questionNumber;
 
 function startGame () {
+  questionNumber = 0;
+  finalScore = 0;
   openingMessage.style.display = "none";
   questionHere.style.display = "flex";
   buttons.style.display = "flex";
   quizDeets.style.display = "flex";
   countdownEl.style.display = "flex";
   progressEl.style.display = "flex";
+  endDisplay.style.display= "none";
+  buttonDisplay.style.display =  "none";
+  
+
   startCountdown();
   showQuestion(questionNumber);
   showProgress();
   console.log("Start game launched");
 }
 
-var x = questionNumber
+
+
+
 function showQuestion(x) {
         questionHere.textContent = questionsList[x].text;
         btn0.textContent = questionsList[x].options[0];
         btn1.textContent = questionsList[x].options[1];
         btn2.textContent = questionsList[x].options[2];
-        btn3.textContent = questionsList[x].options[3];       
+        btn3.textContent = questionsList[x].options[3];  
+        var x = questionNumber;     
     }
 
-    function guessAnswer(event) {
+function guessAnswer(event) {
         event.preventDefault();
         guessResult.style.display = "flex";
     
@@ -56,6 +65,7 @@ function showQuestion(x) {
            if (questionsList[questionNumber].answer == event.target.value) {
             guessResult.textContent = "Correct! You're a star!"; 
             finalScore = finalScore + 1;
+            console.log(finalScore);
     
         } else {
             time = time - 10;
@@ -68,27 +78,31 @@ function showQuestion(x) {
         gameOver();
     }
     questionNumber++;
-    }
+    };
     
-   
-    function showProgress() {
+function showProgress() {
         let currentQuestionsNumber = questionNumber + 1;
-        let progressEl = document.getElementById("progress");
+        let progressEl = document.getElementById("#progress");
         progressEl.textContent = "Question " + currentQuestionsNumber + " of "+ (questionsList.length);
       }; 
+  
 
-    function gameOver() {
+function gameOver() {
     questionHere.style.display = "none";
     buttons.style.display = "none";
     quizDeets.style.display = "none";
     countdownEl.style.display = "none";
     progressEl.style.display = "none";
+    guessResult.style.display = "none";
     endDisplay.style.display = "block";
-    }
+    scoreText.textContent = "You got: " + (finalScore * 10) + "% correct!";
+    buttonDisplay.style.display = "flex";
+    };
 
-var time = 90;
-var countdownEl = document.querySelector("#countdown")
+   
+
 function startCountdown() {
+    time = 90;
     let countdownInterval = setInterval(function() {
         if (time <= 0) {
             clearInterval(countdownInterval);
@@ -99,6 +113,17 @@ function startCountdown() {
         }
     }, 1000);
 };
+
+
+
+
+
+
+
+
+
+
+
 
 var startButton = document.querySelector("#start-button");
 startButton.addEventListener("click", () => {
