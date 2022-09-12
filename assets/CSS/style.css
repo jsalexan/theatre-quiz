@@ -29,6 +29,16 @@ h1 {
     background-color: black;
 } 
 
+h2 {
+    font-size: 30px;
+    color: #e6a152;
+    text-align: center;
+    padding: 15px;
+    font-family: broadway;
+    width: auto;
+    background-color: black;
+}
+
 hr {
     border-color: #e6a152;
     width: 100%;
@@ -58,7 +68,7 @@ hr {
     display: none;
     background-color: black;
     text-align: center;
-    line-height: auto;
+    height: 60px;
     font-size: 20px;
     color: #e6a152;
     font-family: 'Courier New', Courier, monospace;
@@ -169,25 +179,33 @@ form {
     background-color: black;
 } 
 
-#initials placeholder{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #e6a152;
-    color:black;
-    width: 20px;
+input {
+    background-color:#e6a152;
+    border:none;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: auto;
 }
 
-button #enter-initials {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+input::placeholder{
+
     text-align: center;
-    background-color: #e6a152;
+    color: black;
+    width: 100%;
+}
+
+button#saveScoreBtn {
     color:black;
-    border-radius: 5px;
-  
+    font-family: broadway;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #e6a152;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #score {
@@ -198,14 +216,16 @@ button #enter-initials {
 
 #opening-display {
     display: flex;
+    flex-direction: column;
     margin-top: 40px;
     margin-bottom: 20px;
  }
-
+ 
 #opening-display p{
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
 }
 
 .guess-result {
@@ -220,4 +240,9 @@ button #enter-initials {
 
 .quiz-repeat {
     text-align: center;
+    font-size: 15px;
+}
+
+.high-scores {
+    display: none;
 }

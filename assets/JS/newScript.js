@@ -1,8 +1,10 @@
-var openingMessage = document.querySelector("#opening-display");
-var quizScreen = document.querySelector("quiz-display")
-var endDisplay = document.querySelector("end-display")
-var questionEl = document.querySelector(".question");
-var progressEl = document.querySelector("progress");
-var countdownEl = document.querySelector("countdown")
-var startButton = document.querySelector("start-button");
-var resetButton = document.querySelector("reset-button");
+var initials = document.getElementById("#initials");
+
+var mostRecentScore = JSON.parse(localStorage.getItem("mostRecentScore");
+var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+var numHighScores = 5;
+
+initials.addEventListener("click", () =>  {
+    console.log(initials.value);
+    saveScoreBtn.disabled = !initials.value;});
+

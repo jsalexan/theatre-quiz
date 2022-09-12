@@ -2,9 +2,13 @@ var openingMessage = document.querySelector("#opening-display");
 var quizScreen = document.querySelector("#quiz-display");
 var endDisplay = document.querySelector("#final-display");
 var buttonDisplay = document.querySelector(".button-display");
-var enterInitials = document.querySelector("#enter-initials");
+var saveScoreBtn = document.querySelector("#saveScoreBtn");
 var time;
 
+var initials = document.getElementById("#initials");
+var mostRecentScore = JSON.parse(localStorage.getItem("mostRecentScore"));
+var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+var numHighScores = 5;
 
 var resetButton = document.querySelector("reset-button");
 var questionHere = document.querySelector(".question-here");
@@ -32,10 +36,10 @@ function startGame () {
   questionProgress = 1;
   finalScore = 0;
   openingMessage.style.display = "none";
-  questionHere.style.display = "flex";
+  questionHere.style.display = "block";
   buttons.style.display = "flex";
-  quizDeets.style.display = "flex";
-  countdownEl.style.display = "flex";
+  quizDeets.style.display = "block";
+  countdownEl.style.display = "block";
   
   endDisplay.style.display= "none";
   buttonDisplay.style.display =  "none";
@@ -62,11 +66,12 @@ function guessAnswer(event) {
     
         setTimeout(function () {
             guessResult.style.display = "none";
-        }, 1000);
+            }, 1000);
     
            if (questionsList[questionNumber].answer == event.target.value) {
             guessResult.textContent = "Correct! You're a star!"; 
-            finalScore = finalScore + 1;
+            finalScore = finalScore+ 1;
+            localStorage.setItem("finalScore", score);
             console.log(finalScore);
     
         } else {
@@ -79,7 +84,7 @@ function guessAnswer(event) {
         } else {
         gameOver();
         }
-    questionNumber++;
+        questionNumber++;
     };
     
 
@@ -130,6 +135,8 @@ startButton.addEventListener("click", () => {
 optionsBtns.forEach(function(click){
     click.addEventListener("click", guessAnswer);
 });
+
+
 
 
 
