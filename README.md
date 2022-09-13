@@ -18,7 +18,7 @@ By meeting these goals, this quiz demonstrates several new functions of JavaScri
 
 When I began work on this project, I did not feel confident at all with any of the concepts I needed to understand to make something like this work. Through trial and error, tutorials, an embarrassing amount of hours, and lots of tears, I've managed to put together what you see here. AND I've gained A LOT more confidence and knowledge. 
 
-This quiz is about 90% done. I'm still working on getting the high scores displayed. And there are several things I'd love to continue working through, like some of the CSS details, the timing on the appearance of the questions, adding media queries for multiple screen sizes, commenting more of the code, and all of the code needs lots of refactoring. But I'm thrilled and very relieved to get thus far. It was a true learning experience. 
+This quiz is about 90% done. I'm still working on getting the high scores displayed and I haven't written the code for the reset button. And there are several things I'd love to continue working through, like some of the CSS details, the timing on the appearance of the questions, adding media queries for multiple screen sizes, commenting more of the code, and all of the code needs lots of refactoring. But I'm thrilled and very relieved to get thus far. It was a true learning experience. 
 <br>
 <br>
 

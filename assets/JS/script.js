@@ -30,7 +30,7 @@ var finalScore;
 var questionNumber;
 
 
-
+// This runs when the start button is clicked and launches the questions and starts countdown.
 function startGame () {
   questionNumber = 0;
   questionProgress = 1;
@@ -40,17 +40,14 @@ function startGame () {
   buttons.style.display = "flex";
   quizDeets.style.display = "block";
   countdownEl.style.display = "block";
-  
   endDisplay.style.display= "none";
   buttonDisplay.style.display =  "none";
   
-
   startCountdown();
   showQuestion(questionNumber);
-  
-  console.log("Start game launched");
 }
 
+//This pulls a question from the trivia list and populates the options buttons.
 function showQuestion(x) {
         questionHere.textContent = questionsList[x].text;
         btn0.textContent = questionsList[x].options[0];
@@ -60,6 +57,7 @@ function showQuestion(x) {
         var x = questionNumber;     
     }
 
+// This function allows the correct/wrong text to appear and disappear and determines whether the options selected was a correct or wrong answer. It also adds to the score and advances to the next question AND deducts time if the answer is wrong.
 function guessAnswer(event) {
         event.preventDefault();
         guessResult.style.display = "block";
@@ -87,7 +85,7 @@ function guessAnswer(event) {
         questionNumber++;
     };
     
-
+// The function sets up the final screen with the score total and the form to submit your initials.
 function gameOver() {
     questionHere.style.display = "none";
     buttons.style.display = "none";
@@ -99,8 +97,7 @@ function gameOver() {
     buttonDisplay.style.display = "flex";
     };
 
-   
-
+// This is the countdown function that shows during the questions part. 
 function startCountdown() {
     time = 90;
     let countdownInterval = setInterval(function() {
@@ -114,24 +111,14 @@ function startCountdown() {
     }, 1000);
 };
 
-
-
-
-
-
-
-
-
-
-
-
+// This is the event listener for the start button.
 var startButton = document.querySelector("#start-button");
 startButton.addEventListener("click", () => {
     startGame();
     console.log("Button clicked.");
 });
 
-
+// This is the event listener for the options buttons during the question portion.
 optionsBtns.forEach(function(click){
     click.addEventListener("click", guessAnswer);
 });
