@@ -5,7 +5,7 @@
 
 /* The stage image behind the quiz. */
 .hero {
-    background-image: url("../assets/images/TheaterStage.jpg");
+    background-image: url("https://github.com/jsalexan/theatre-quiz/blob/main/assets/images/TheaterStage.jpg");
     height: 100vh;
     background-position: center;
     background-size: cover;
