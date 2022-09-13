@@ -6,7 +6,7 @@ var saveScoreBtn = document.querySelector("#saveScoreBtn");
 var time;
 
 var initials = document.getElementById("#initials");
-var mostRecentScore = JSON.parse(localStorage.getItem("mostRecentScore"));
+var mostRecentScore = JSON.parse(localStorage.getItem("finalScore"));
 var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 var numHighScores = 5;
 
@@ -70,8 +70,7 @@ function guessAnswer(event) {
             guessResult.textContent = "Correct! You're a star!"; 
             finalScore = finalScore+ 1;
             localStorage.setItem("finalScore", (finalScore*10));
-            console.log(finalScore);
-    
+               
         } else {
             time = time - 10;
             guessResult.textContent = "Wrong! Back to rehearsal!";
