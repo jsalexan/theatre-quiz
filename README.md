@@ -26,7 +26,7 @@ This quiz is about 90% done. I'm still working on getting the high scores displa
 The website is hosted by GitHub pages. <br>
 You can find it here: [Link to Musical Theatre Quiz webpage](https://jsalexan.github.io/theatre-quiz/)
 <br><br>
-The repository is on GitHub: [Link to GitHub repository for Random Password Generator project.](https://github.com/jsalexan/theatre-quiz) <br>
+The repository is on GitHub: [Link to GitHub repository for Musical Theatre quiz.](https://github.com/jsalexan/theatre-quiz) <br>
 There you will find following : index.html, README, and license files, plus an Access folder containing images, js, and style.css files.
 
 <br>
