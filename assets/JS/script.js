@@ -7,7 +7,7 @@ var time;
 var submitScoreForm = document.getElementById("#submitScoreForm");
 var initials = document.getElementById("#initials");
 var mostRecentScore = JSON.parse(localStorage.getItem("finalScore"));
-// var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 var saveScoreBtn = document.querySelector("#saveScoreBtn");
 var numHighScores = 5;
 
@@ -43,6 +43,7 @@ function startGame () {
   countdownEl.style.display = "block";
   endDisplay.style.display= "none";
   buttonDisplay.style.display =  "none";
+  highScoresDisplay.style.display = "none";
   
   startCountdown();
   showQuestion(questionNumber);
@@ -92,6 +93,7 @@ function gameOver() {
     quizDeets.style.display = "none";
     countdownEl.style.display = "none";
     guessResult.style.display = "none";
+    highScoresDisplay.style.display = "none";
     endDisplay.style.display = "block";
     scoreText.textContent = "You got: " + (finalScore * 10) + "% correct!";
     buttonDisplay.style.display = "flex";
@@ -123,37 +125,15 @@ optionsBtns.forEach(function(click){
     click.addEventListener("click", guessAnswer);
 });
 
-function saveHighScores() {
-    var initials = submitScoreForm.value.trim() 
-    if (initials !== ""){
-       finalScore = JSON.parse(window.localStorage.getItem("finalScore")) || [];
 
-        let saveScore = {
-            score: finalScore,
-            initials: initials,
-    }
 
-    finalScore.push(saveScore)
-    window.localStorage.setItem("finalScore", JSON.stringify(finalScore))
-}
 
-for (var i=0; i<finalScore.length; i+=1) {
 
-    var scoreList = document.createElement("li");
-    
-    scoreList.textContent = finalScore[i].initials + "-" + finalScore[i].finalScore;
-
-    var listHolder = document.getElementById(".high-scores");
-
-    listHolder.appendChild(scoreList);
-
-    console.log(scoreList);
-}
-
-}
-
-saveScoreBtn.onSubmit = (saveHighScores, quizEnd());
-
+// This is the function to save the initials and score and add the info the highscores page..
+saveHighScores = e => {
+    console.log("Entered the form information.");
+    e.preventDefault();
+};
 
 function quizEnd() {
 

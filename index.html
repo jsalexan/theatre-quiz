@@ -53,9 +53,9 @@
 
                 <!-- Line to let you know if your answer was right or wrong. -->
                          <div class="guess-result">
-                            <p>Guess Result</p>
+                            <p></p>
                         </div>
-                    </div>
+                    
 
                 <!-- Final score page -->
                     <div id="final-display">
@@ -68,14 +68,17 @@
                         name="initials" 
                         id="initials" 
                         placeholder="Type Initials Here">
-                        
-                         <p>Enter your initials to save your score.</p>
+                        />
+
+                        <p>Enter your initials to save your score.</p>
+
                         <button 
                         type="submit"
                         id="saveScoreBtn"
+                        onclick= "saveHighScores(event)"
+                        >
                         
-                       
-                        >ENTER</button>
+                        ENTER</button>
                         </form>
                         
                         <div class="quiz-repeat">
@@ -83,8 +86,10 @@
                         <br>
                         To clear all scores, click RESET.
                         </div>
-
                     </div>
+  <
+             
+
 
                 <!-- Start and Reset buttons, plus theatre masks image. -->
                 <div class="container-2">
@@ -99,11 +104,7 @@
             </div>  
             </div>
 
-                <!-- Home of future high scores page. -->
-            <div class= "high-scores">
-                <h2>Top Billing</h2>
-                <p></p>
-            </div>
+          
         </header>
         <script src="./assets/JS/script.js"></script>
         <script src="./assets/JS/trivia.js"></script>

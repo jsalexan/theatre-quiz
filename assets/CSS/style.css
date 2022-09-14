@@ -232,7 +232,7 @@ input {
 input::placeholder{
 
     text-align: center;
-    color: black;
+    color: gray;
     width: 100%;
 }
 
@@ -264,6 +264,6 @@ button#saveScoreBtn {
 }
 
 /* Future styling for high scores page to come. */
-.high-scores {
+.high-scores h2{
     display: none;
 }
