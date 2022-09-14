@@ -93,7 +93,7 @@ function gameOver() {
     quizDeets.style.display = "none";
     countdownEl.style.display = "none";
     guessResult.style.display = "none";
-    highScoresDisplay.style.display = "none";
+   
     endDisplay.style.display = "block";
     scoreText.textContent = "You got: " + (finalScore * 10) + "% correct!";
     buttonDisplay.style.display = "flex";
@@ -129,14 +129,14 @@ optionsBtns.forEach(function(click){
 
 
 
-// This is the function to save the initials and score and add the info the highscores page..
-saveHighScores = e => {
-    console.log("Entered the form information.");
-    e.preventDefault();
-};
+// // This is the function to save the initials and score and add the info the highscores page..
+// saveHighScores = e => {
+//     console.log("Entered the form information.");
+//     e.preventDefault();
+// };
 
-function quizEnd() {
+// function quizEnd() {
 
-    endDisplay.style.display = "none";
-    highScoresDisplay.style.display = "block";
-}
+//     endDisplay.style.display = "none";
+//     highScoresDisplay.style.display = "block";
+// }
