@@ -43,7 +43,7 @@ function startGame () {
   countdownEl.style.display = "block";
   endDisplay.style.display= "none";
   buttonDisplay.style.display =  "none";
-  highScoresDisplay.style.display = "none";
+  
   
   startCountdown();
   showQuestion(questionNumber);
