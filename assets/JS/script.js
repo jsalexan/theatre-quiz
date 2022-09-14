@@ -2,12 +2,13 @@ var openingMessage = document.querySelector("#opening-display");
 var quizScreen = document.querySelector("#quiz-display");
 var endDisplay = document.querySelector("#final-display");
 var buttonDisplay = document.querySelector(".button-display");
-var saveScoreBtn = document.querySelector("#saveScoreBtn");
 var time;
 
+var submitScoreForm = document.getElementById("#submitScoreForm");
 var initials = document.getElementById("#initials");
 var mostRecentScore = JSON.parse(localStorage.getItem("finalScore"));
-var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+// var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+var saveScoreBtn = document.querySelector("#saveScoreBtn");
 var numHighScores = 5;
 
 var resetButton = document.querySelector("reset-button");
@@ -17,7 +18,7 @@ var guessResult = document.querySelector(".guess-result");
 var quizDeets = document.querySelector(".quiz-deets");
 
 var countdownEl = document.querySelector("#countdown");
-var highScores = document.querySelector(".high-scores");
+var highScoresDisplay = document.querySelector(".high-scores");
 
 var btn0 = document.querySelector("#btn0");
 var btn1 = document.querySelector("#btn1");
@@ -122,12 +123,40 @@ optionsBtns.forEach(function(click){
     click.addEventListener("click", guessAnswer);
 });
 
+function saveHighScores() {
+    var initials = submitScoreForm.value.trim() 
+    if (initials !== ""){
+       finalScore = JSON.parse(window.localStorage.getItem("finalScore")) || [];
+
+        let saveScore = {
+            score: finalScore,
+            initials: initials,
+    }
+
+    finalScore.push(saveScore)
+    window.localStorage.setItem("finalScore", JSON.stringify(finalScore))
+}
+
+for (var i=0; i<finalScore.length; i+=1) {
+
+    var scoreList = document.createElement("li");
+    
+    scoreList.textContent = finalScore[i].initials + "-" + finalScore[i].finalScore;
+
+    var listHolder = document.getElementById(".high-scores");
+
+    listHolder.appendChild(scoreList);
+
+    console.log(scoreList);
+}
+
+}
+
+saveScoreBtn.onSubmit = (saveHighScores, quizEnd());
 
 
+function quizEnd() {
 
-
-
-
-
-
-
+    endDisplay.style.display = "none";
+    highScoresDisplay.style.display = "block";
+}
