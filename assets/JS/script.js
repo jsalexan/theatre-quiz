@@ -7,6 +7,7 @@ var time;
 var submitScoreForm = document.getElementById("#submitScoreForm");
 
 var mostRecentScore = JSON.parse(localStorage.getItem("finalScore"));
+
 var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 var saveScoreBtn = document.querySelector("#saveScoreBtn");
 var numHighScores = 5;
@@ -18,7 +19,7 @@ var guessResult = document.querySelector(".guess-result");
 var quizDeets = document.querySelector(".quiz-deets");
 
 var countdownEl = document.querySelector("#countdown");
-var highScoresDisplay = document.querySelector(".high-scores");
+// var highScoresDisplay = document.querySelector(".high-scores");
 
 var btn0 = document.querySelector("#btn0");
 var btn1 = document.querySelector("#btn1");
@@ -35,11 +36,19 @@ function saveHighScores(event) {
     console.log("Entered the form information.");
     var initials = document.getElementById("initials");
     const yourScore = {
-        score: finalScore,
+        score: (finalScore * 10),
         name: initials.value
     };
     highScores.push(yourScore);
     console.log(highScores);
+
+    highScores.sort( (a,b) => 
+        b.score - a.score);
+    highScores.splice(5);
+
+    localStorage.setItem('highScores', JSON.stringify(highScores));
+    window.location.assign("/");
+
 };
 
 // This runs when the start button is clicked and launches the questions and starts countdown.
@@ -139,11 +148,6 @@ optionsBtns.forEach(function(click){
 
 
 
-// // This is the function to save the initials and score and add the info the highscores page..
 
 
-// function quizEnd() {
 
-//     endDisplay.style.display = "none";
-//     highScoresDisplay.style.display = "block";
-// }

@@ -31,7 +31,7 @@
 #opening-display p{
     text-align: center;
     font-size: 20px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
 
 }
 
@@ -41,7 +41,7 @@ h1 {
     color: #e6a152;
     text-align: center;
     padding: 10px;
-    font-family: broadway;
+    font-family: 'Broadway';
     width: auto;
     background-color: black;
 } 
@@ -52,7 +52,7 @@ h2 {
     color: #e6a152;
     text-align: center;
     padding: 15px;
-    font-family: broadway;
+    font-family: 'Josefin Sans', sans-serif;
     width: auto;
     background-color: black;
 }
@@ -77,6 +77,7 @@ img {
     flex-direction: column;
     justify-content: space-around; 
     align-items: center;
+    padding: 10px;
     width: 600px;
     height: 440px;
     margin-top: 200px;
@@ -99,7 +100,7 @@ img {
     height: 60px;
     font-size: 20px;
     color: #e6a152;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Josefin Sans', sans-serif;
     padding: 20px;    
 }
 
@@ -120,9 +121,10 @@ img {
     font-weight: bold;
     background-color: #e6a152;
     border-color: black;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 16px;
-    width: 80%
+    width: 80%;
+    height: 40%;
 }
 
 /* Hover for the options buttons. */
@@ -138,7 +140,7 @@ img {
 
 /* The text that displays if the answer if right or wrong. */
 .guess-result {
-    display:
+    display: flex;
     justify-content: center;
     align-items: center;
     color:#e6a152;
@@ -159,7 +161,7 @@ img {
 /* Countdown display */
 .quiz-deets #countdown {
     color: #e6a152;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 12px;
     text-align: center;
 }
@@ -172,9 +174,10 @@ img {
     flex-direction: row;
     width: auto;
     text-align: center;
+    gap: 50px;
  }
 
- /* Start button. */
+ /* Curtains Up button. */
 #start-button {
     color:black;
     font-family: broadway;
@@ -188,18 +191,14 @@ img {
     margin-top: 20px;
 }
 
-/* Reset button */
-#reset-button {
-    color:black;
-    font-family: broadway;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #e6a152;
-    padding: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    width: auto;
-    margin-top: 20px;
+#start-button:active {
+    background-color: #e6a152b8;;
+    box-shadow: 0 5px rgb(21, 21, 21);
+    transform: translateY(4px);
+}
+
+#start-button:hover {
+    background-color: #d1934d ;
 }
 
 /* The last screen with final score. */
@@ -225,14 +224,25 @@ input {
     border:none;
     border-radius: 4px;
     margin-bottom: 10px;
-    width: auto;
+    width: 300px;
+    height: 20px;
+}
+
+input#initials {
+    background-color: #e6a152;
+    text-align: center;
+}
+
+input#initials:focus::-webkit-input-placeholder {
+    color: transparent;
+    opacity : 0;
 }
 
 /* The placeholder text in the initials input box. */
 input::placeholder{
 
     text-align: center;
-    color: gray;
+    color: rgb(37, 36, 36);
     width: 100%;
 }
 
@@ -251,6 +261,16 @@ button#saveScoreBtn {
     margin-bottom: 10px;
 }
 
+button#saveScoreBtn:active {
+    background-color: #e6a152b8;;
+    box-shadow: 0 5px rgb(21, 21, 21);
+    transform: translateY(4px);
+}
+
+button#saveScoreBtn:hover {
+    background-color: #d1934d ;
+}
+
 /* The score display */
 #score {
     color:#e6a152;
@@ -266,4 +286,31 @@ button#saveScoreBtn {
 /* Future styling for high scores page to come. */
 .high-scores h2{
     display: none;
+}
+
+p {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+a.high-scores-button {
+    color: black;
+    font-family: broadway;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #e6a152;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: auto;
+    margin-top: 20px;
+}
+
+a.high-scores-button:active {
+    background-color: #e6a152b8;;
+    box-shadow: 0 5px rgb(21, 21, 21);
+    transform: translateY(4px);
+}
+
+a.high-scores-button:hover {
+    background-color: #d1934d ;
 }

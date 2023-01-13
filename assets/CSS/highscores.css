@@ -1,0 +1,64 @@
+* {
+    width: auto;
+    margin: 0;  
+   
+}
+
+/* The stage image behind the quiz. */
+.hero {
+    background-image: url("https://user-images.githubusercontent.com/110498167/212219081-4e89b2ce-1f4c-456b-ab1e-d925b6bb0664.jpg");
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+.marquee {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    
+}
+.high-scores {
+    color: black;
+    text-align: center;
+    padding-top: 350px;
+    font-family: 'Limelight', cursive;
+
+}
+
+h2 {
+    font-size: 36px;
+}
+
+li {
+    font-size: 20px;
+    list-style-type: none;
+}
+
+.regBTN {
+    color: black;
+    font-family: broadway;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #e6a152;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: auto;
+    margin-top: 20px;
+    border-color: black;
+    border-style: double;
+}
+
+.regBTN:active {
+    background-color: #e6a152b8;;
+    box-shadow: 0 5px #926634;
+    transform: translateY(4px);
+}
+
+.regBTN:hover {
+    background-color: #d1934d ;
+}
