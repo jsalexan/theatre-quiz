@@ -5,7 +5,7 @@ var buttonDisplay = document.querySelector(".button-display");
 var time;
 
 var submitScoreForm = document.getElementById("#submitScoreForm");
-var initials = document.getElementById("#initials");
+
 var mostRecentScore = JSON.parse(localStorage.getItem("finalScore"));
 var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 var saveScoreBtn = document.querySelector("#saveScoreBtn");
@@ -30,6 +30,17 @@ var scoreText = document.querySelector("#score");
 var finalScore;
 var questionNumber;
 
+function saveHighScores(event) { 
+    event.preventDefault();
+    console.log("Entered the form information.");
+    var initials = document.getElementById("initials");
+    const yourScore = {
+        score: finalScore,
+        name: initials.value
+    };
+    highScores.push(yourScore);
+    console.log(highScores);
+};
 
 // This runs when the start button is clicked and launches the questions and starts countdown.
 function startGame () {
@@ -62,10 +73,10 @@ function showQuestion(x) {
 // This function allows the correct/wrong text to appear and disappear and determines whether the options selected was a correct or wrong answer. It also adds to the score and advances to the next question AND deducts time if the answer is wrong.
 function guessAnswer(event) {
         event.preventDefault();
-        guessResult.style.display = "block";
+        guessResult.style.visibility = "visible";
     
         setTimeout(function () {
-            guessResult.style.display = "none";
+            guessResult.style.visibility = "hidden";
             }, 1000);
     
            if (questionsList[questionNumber].answer == event.target.value) {
@@ -93,7 +104,6 @@ function gameOver() {
     quizDeets.style.display = "none";
     countdownEl.style.display = "none";
     guessResult.style.display = "none";
-   
     endDisplay.style.display = "block";
     scoreText.textContent = "You got: " + (finalScore * 10) + "% correct!";
     buttonDisplay.style.display = "flex";
@@ -130,10 +140,7 @@ optionsBtns.forEach(function(click){
 
 
 // // This is the function to save the initials and score and add the info the highscores page..
-// saveHighScores = e => {
-//     console.log("Entered the form information.");
-//     e.preventDefault();
-// };
+
 
 // function quizEnd() {
 

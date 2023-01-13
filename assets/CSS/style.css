@@ -138,7 +138,7 @@ img {
 
 /* The text that displays if the answer if right or wrong. */
 .guess-result {
-    display: none;
+    display:
     justify-content: center;
     align-items: center;
     color:#e6a152;
