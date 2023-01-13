@@ -51,6 +51,7 @@ li {
     margin-top: 20px;
     border-color: black;
     border-style: double;
+    text-decoration: none;
 }
 
 .regBTN:active {

@@ -303,6 +303,7 @@ a.high-scores-button {
     cursor: pointer;
     width: auto;
     margin-top: 20px;
+    text-decoration: none;
 }
 
 a.high-scores-button:active {
