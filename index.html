@@ -22,12 +22,14 @@
                 <!-- First page of quiz -->
 
                     <div id="opening-display">
-                        <h1>Broadway<br> Quiz</h1>
+                        <h1>Broadway Quiz</h1>
                         <hr>
                         <h2>Welcome, thespians!</h2>
-                        <br><p> 
-                            You will have 90 seconds<br>to answer these questions.<br>
-                            10 seconds will be deducted<br> for each wrong answer.<br><br>Press the CURTAINS UP <br>button to begin.
+                        <br>
+                        <p class="opening-text"> 
+                            You will have 90 seconds<br>to answer these questions.<br><br></p>
+                            <p id="opening-subtext">(10 seconds will be deducted  for each wrong answer.)<br><br></p>
+                            <p class="opening-text">CURTAINS UP to begin...
                             <br><br> BREAK A LEG!!
                         </p>
                     </div>
@@ -73,7 +75,7 @@
                         placeholder="Type Your Stage Name Here">
                         />
 
-                        <p>Enter your stage name <br> to save your score.</p>
+                        <p class="final-text">Enter your stage name <br> to save your score.</p>
 
                         <button 
                         type="submit"
@@ -85,20 +87,19 @@
                         </form>
                         
                         <div class="quiz-repeat">
-                        <p>To take quiz again,<br> click CURTAINS UP.  
+                        <p class='final-text'>To take quiz again,<br> click CURTAINS UP.  
                         <br>
                         To view high scores,<br> click HIGH SCORES.
+                        </p>
                         </div>
                     </div>
-  
-             <!-- Start and Reset buttons, plus theatre masks image. -->
+                </div>
+             <!-- Start and Highscore buttons, plus theatre masks image. -->
              <div class="container-2">
                 <div class="button-display">
                     <button id="start-button">CURTAINS UP</button>
                     <img src="./assets/images/Theatre Masks.png" alt="Gold theatre masks">                   <a class="high-scores-button" href="highscores.html">HIGH SCORES</a>
-                    
-                </div>
-            </div>
+                </div>       
             </div>  
           
 
