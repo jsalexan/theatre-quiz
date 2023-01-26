@@ -63,3 +63,12 @@ li {
 .regBTN:hover {
     background-color: #d1934d ;
 }
+
+/* ------------------------------------------- */
+@media only screen and (max-width: 600px) {
+    li {
+        font-size: 18px;
+    }
+    
+    
+    }

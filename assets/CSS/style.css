@@ -97,11 +97,11 @@ img {
     display: none;
     background-color: black;
     text-align: center;
-    height: 60px;
+    height: 109px;
     font-size: 20px;
     color: #e6a152;
     font-family: 'Josefin Sans', sans-serif;
-    padding: 20px;    
+    padding: 10px;    
 }
 
 /* The buttons section containing the options buttons. */
@@ -208,6 +208,9 @@ img {
     align-items: center;
 
 }
+h2#score {
+    font-size: 20px;
+}
 
 /* The form for entering initials */
 form {
@@ -231,6 +234,7 @@ input {
 input#initials {
     background-color: #e6a152;
     text-align: center;
+    width: 200px;
 }
 
 input#initials:focus::-webkit-input-placeholder {
@@ -314,4 +318,20 @@ a.high-scores-button:active {
 
 a.high-scores-button:hover {
     background-color: #d1934d ;
+}
+
+/* ------------------------------------------- */
+@media only screen and (max-width: 600px) {
+#quiz-box {
+    width: 100%;
+}
+
+.button-display {
+    gap: 0;
+}
+
+#quiz-display {
+    width: 90%;
+}
+
 }
