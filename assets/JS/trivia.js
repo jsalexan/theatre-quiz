@@ -72,7 +72,7 @@ let questionsList = [
     }, 
     
     {
-        text: "What musical did composer/lyricist Jonathan Larson spend seven years working on, only to die hours before its pre-Broadway opening?",
+        text: "What musical did composer/lyricist Jonathan Larson spend seven years working on, only to pass away hours before its pre-Broadway opening?",
         options: [
             "Promises, Promises", "Rent", "Hamilton", "Dear Evan Hanson"
         ],
