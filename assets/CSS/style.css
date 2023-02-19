@@ -24,7 +24,7 @@
 #opening-display {
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 20px;
  }
  
@@ -336,6 +336,10 @@ a.high-scores-button:hover {
 @media only screen and (max-width: 600px) {
 #quiz-box {
     width: 92%;
+
+
+    height: 420px;
+    margin-top: 150px;
 }
 
 .button-display {
@@ -344,8 +348,8 @@ a.high-scores-button:hover {
 
 #quiz-display {
     width: 90%;
-    margin-top: 60px;
-
+    margin-top: 20px;
+    display: none;
 }
 
 .question-here {

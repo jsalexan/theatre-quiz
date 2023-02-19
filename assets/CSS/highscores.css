@@ -28,8 +28,8 @@
     color: black;
     text-align: center;
     font-family: 'Limelight', cursive;
-    position: absolute;
     min-width: 300px;
+    padding-top: 20px;
 }
 
 #highScoresDisplay {
@@ -49,7 +49,7 @@ li {
 }
 
 ul {
-    padding: 0;
+    padding: 0 !important;
 }
 
 /* Encore button */
@@ -76,8 +76,7 @@ ul {
 
 .regBTN:active {
     background-color: #e6a152b8;;
-    box-shadow: 0 5px #926634;
-    transform: translateY(4px);
+    box-shadow: 0 2px #926634;
 }
 
 .regBTN:hover {
@@ -88,7 +87,5 @@ ul {
 @media only screen and (max-width: 600px) {
     li {
         font-size: 18px;
-    }
-    
-    
-    }
+    }  
+}

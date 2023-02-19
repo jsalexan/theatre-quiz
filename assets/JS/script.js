@@ -64,6 +64,7 @@ function startGame () {
   endDisplay.style.display= "none";
   buttonDisplay.style.display =  "none";
   quizScreen.style.display = "block";
+  quizScreen.style.display = "block";
   
   
   startCountdown();
