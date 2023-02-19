@@ -3,30 +3,40 @@
     margin: 0;  
    
 }
+.parent {
+    position: relative; 
+}
 
 /* The stage image behind the quiz. */
 .hero {
     background-image: url("https://user-images.githubusercontent.com/110498167/212219081-4e89b2ce-1f4c-456b-ab1e-d925b6bb0664.jpg");
     height: 100vh;
+    width: 100%;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+    display: block;
   }
 
-.marquee {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
-    
-}
+/* Container for high scores display */
 .high-scores {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: black;
     text-align: center;
-    padding-top: 350px;
     font-family: 'Limelight', cursive;
+    position: absolute;
+    min-width: 300px;
+}
 
+#highScoresDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 h2 {
@@ -38,7 +48,13 @@ li {
     list-style-type: none;
 }
 
+ul {
+    padding: 0;
+}
+
+/* Encore button */
 .regBTN {
+    position: absolute;
     color: black;
     font-family: broadway;
     font-size: 16px;
@@ -47,11 +63,15 @@ li {
     padding: 10px;
     border-radius: 4px;
     cursor: pointer;
-    width: auto;
-    margin-top: 20px;
+    width: 100px;
+    margin-top: 150px;
     border-color: black;
     border-style: double;
     text-decoration: none;
+    text-align: center;
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .regBTN:active {
