@@ -2,23 +2,12 @@
 
 ## Description
 
-This is a timed Musical Theatre trivia quiz, created using JavaScript, HTML, and CSS. The following requirements for its design were as follows: 
-
-	1. When clicking a start button, a timer starts, and the user is presented with a question.
-
-    2. When the user answers the question, they are then presented with another question.
-
-    3. When the user answers a question incorrectly, time is subtracted from the clock.
-
-    4. When all of the questions are answered or the timer reaches 0, then the game is over.
-
-    5. When the game is over, the user can save their initials and score.
-
-By meeting these goals, this quiz demonstrates several new functions of JavaScript, the interface is clear and simple, and the code is easy to read and understand. 
+This is a timed Musical Theatre trivia quiz, created using JavaScript, HTML, and CSS. 
+This quiz demonstrates several new functions of JavaScript, the interface is clear and simple, and the code is easy to read and understand. 
 
 When I began work on this project, I did not feel confident at all with any of the concepts I needed to understand to make something like this work. Through trial and error, tutorials, an embarrassing amount of hours, and lots of tears, I've managed to put together what you see here. AND I've gained A LOT more confidence and knowledge. 
 
-This quiz is about 90% done. I'm still working on getting the high scores displayed and I haven't written the code for the reset button. And there are several things I'd love to continue working through, like some of the CSS details, the timing on the appearance of the questions, adding media queries for multiple screen sizes, commenting more of the code, and all of the code needs lots of refactoring. But I'm thrilled and very relieved to get thus far. It was a true learning experience. 
+There are several things I'd love to continue working through, like some of the CSS details, the timing on the appearance of the questions, commenting more of the code, and all of the code needs lots of refactoring. But I'm thrilled and very relieved to get thus far. It was a true learning experience. 
 <br>
 <br>
 
